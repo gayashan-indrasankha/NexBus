@@ -13,6 +13,12 @@ $displayName = $displayName !== '' ? $displayName : ($user['name'] ?? ($user['fu
 $initial = $user ? strtoupper(substr($displayName !== '' ? $displayName : 'B', 0, 1)) : '?';
 $email   = $user['email'] ?? 'owner@nexbus.lk';
 $name    = $displayName !== '' ? $displayName : 'Bus Owner';
+$isDashboardPage = $path === '/B' || $path === '/B/dashboard' || ($module === 'B' && ($page === 'dashboard' || $page === ''));
+
+$ownerCssFile = __DIR__ . '/../../public/assets/css/owner.css';
+$ownerJsFile = __DIR__ . '/../../public/assets/js/bus_owner.js';
+$ownerCssVersion = is_file($ownerCssFile) ? (string) filemtime($ownerCssFile) : '1';
+$ownerJsVersion = is_file($ownerJsFile) ? (string) filemtime($ownerJsFile) : '1';
 
 if (!defined('BASE_URL')) define('BASE_URL', '/B');
 ?>
@@ -22,12 +28,12 @@ if (!defined('BASE_URL')) define('BASE_URL', '/B');
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bus Owner Dashboard</title>
-  <link rel="stylesheet" href="/assets/css/owner.css">
-  <script defer src="/assets/js/bus_owner.js"></script>
+  <link rel="stylesheet" href="/assets/css/owner.css?v=<?= htmlspecialchars($ownerCssVersion, ENT_QUOTES) ?>">
+  <script defer src="/assets/js/bus_owner.js?v=<?= htmlspecialchars($ownerJsVersion, ENT_QUOTES) ?>"></script>
   <link rel="icon" href="/assets/images/logo.png" type="image/png">
 
 </head>
-<body>
+<body class="<?= $isDashboardPage ? 'owner-dashboard-page' : '' ?>">
 
 <header class="topbar">
   <div class="brand">
@@ -45,6 +51,14 @@ if (!defined('BASE_URL')) define('BASE_URL', '/B');
 
 <div class="app-shell">
   <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="logo"><img src="/assets/images/logo.png" alt="NexBus Logo"></div>
+      <div>
+        <div class="app">Bus Management System</div>
+        <div class="sub">NexBus Sri Lanka</div>
+      </div>
+    </div>
+
     <div class="sidebar-head">
       <div class="mini-logo">🚌</div>
       <div>

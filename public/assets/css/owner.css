@@ -2305,3 +2305,838 @@ tr.row-updated {
   border-left: 4px solid #9ca3af;
 }
 .alert-neutral svg { color: #9ca3af; }
+
+/* ============================================================
+   PRIVATE BUS OWNER DASHBOARD MOCKUP LAYOUT
+   Scoped to /B/dashboard only through body.owner-dashboard-page.
+   ============================================================ */
+.sidebar-brand {
+  display: none;
+}
+
+body.owner-dashboard-page {
+  background: var(--bg);
+}
+
+body.owner-dashboard-page .topbar {
+  display: none;
+}
+
+body.owner-dashboard-page .app-shell {
+  inset: 0;
+  grid-template-columns: 330px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+body.owner-dashboard-page .sidebar {
+  padding: 26px 18px 24px;
+  gap: 18px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  background:
+    linear-gradient(180deg, rgba(48, 0, 20, .22), rgba(48, 0, 20, .08)),
+    var(--maroon);
+}
+
+body.owner-dashboard-page .sidebar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+body.owner-dashboard-page .sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 4px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, .14);
+}
+
+body.owner-dashboard-page .sidebar-brand .logo {
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+}
+
+body.owner-dashboard-page .sidebar-brand .logo img {
+  width: 48px;
+  height: 48px;
+}
+
+body.owner-dashboard-page .sidebar-brand .app {
+  font-size: 17px;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+body.owner-dashboard-page .sidebar-brand .sub {
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+body.owner-dashboard-page .sidebar-head {
+  padding: 0 8px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, .14);
+}
+
+body.owner-dashboard-page .mini-logo {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(243, 185, 68, .16);
+  font-size: 20px;
+}
+
+body.owner-dashboard-page .sb-title {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+body.owner-dashboard-page .sb-sub {
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+body.owner-dashboard-page .menu {
+  gap: 8px;
+  overflow-y: visible;
+  padding-right: 2px;
+}
+
+body.owner-dashboard-page .menu-item {
+  min-height: 48px;
+  padding: 11px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  gap: 16px;
+}
+
+body.owner-dashboard-page .menu-item .icon svg {
+  width: 25px;
+  height: 25px;
+  stroke-width: 2.1;
+}
+
+body.owner-dashboard-page .menu-item.active {
+  border-right: 0;
+  color: var(--gold);
+  background: linear-gradient(90deg, rgba(186, 31, 86, .84), rgba(166, 24, 76, .58));
+}
+
+body.owner-dashboard-page .sidebar-profile {
+  padding: 16px 4px 0;
+  gap: 12px;
+  border-top: 1px solid rgba(255, 255, 255, .14);
+}
+
+body.owner-dashboard-page .profile-card {
+  padding: 4px 6px;
+  gap: 14px;
+}
+
+body.owner-dashboard-page .profile-avatar {
+  width: 48px;
+  height: 48px;
+  font-size: 18px;
+}
+
+body.owner-dashboard-page .profile-name {
+  font-size: 15px;
+}
+
+body.owner-dashboard-page .profile-email {
+  font-size: 13px;
+}
+
+body.owner-dashboard-page .profile-logout {
+  min-height: 44px;
+  font-size: 16px;
+}
+
+body.owner-dashboard-page .sidebar-foot {
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+body.owner-dashboard-page #content {
+  padding: 28px 42px 20px;
+  background: var(--bg);
+}
+
+#ownerDashboard {
+  min-width: 0;
+}
+
+#ownerDashboard .owner-dashboard-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 0 0 14px;
+}
+
+#ownerDashboard .owner-dashboard-top h1 {
+  margin: 0;
+  color: var(--maroon);
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+#ownerDashboard .owner-dashboard-date {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  color: var(--maroon);
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+#ownerDashboard .dash-hero {
+  position: relative;
+  min-height: 172px;
+  padding: 22px 34px;
+  margin: 0 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+  overflow: hidden;
+  border-radius: 14px;
+  border-bottom: 5px solid var(--gold);
+  color: #fff;
+  background: linear-gradient(135deg, #5c0929 0%, var(--maroon) 46%, #b20d4b 100%);
+  box-shadow: 0 10px 30px rgba(128, 20, 60, .22);
+}
+
+#ownerDashboard .dash-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, .14) 1px, transparent 1.5px);
+  background-size: 13px 13px;
+  opacity: .22;
+}
+
+#ownerDashboard .dash-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 42%;
+  background: linear-gradient(142deg, transparent 0 20%, rgba(255, 255, 255, .05) 20% 100%);
+  pointer-events: none;
+}
+
+#ownerDashboard .dash-hero-dots {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+}
+
+#ownerDashboard .dash-hero-road {
+  position: absolute;
+  right: 42px;
+  bottom: 36px;
+  z-index: 1;
+  width: 180px;
+  height: 72px;
+  pointer-events: none;
+  opacity: .42;
+}
+
+#ownerDashboard .dash-hero-road::before {
+  content: "";
+  position: absolute;
+  inset: 10px 8px 0 0;
+  border-top: 3px dashed rgba(255, 255, 255, .74);
+  border-radius: 50%;
+  transform: rotate(-18deg);
+}
+
+#ownerDashboard .dash-hero-left,
+#ownerDashboard .dash-hero-scene {
+  z-index: 1;
+}
+
+#ownerDashboard .dash-hero-left {
+  position: relative;
+  width: min(55%, 600px);
+  min-width: 0;
+}
+
+#ownerDashboard .dash-greeting-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 30px;
+  padding: 5px 16px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, .94);
+  background: rgba(255, 255, 255, .13);
+  border: 1px solid rgba(255, 255, 255, .12);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+#ownerDashboard .dash-chip-dot {
+  opacity: .88;
+}
+
+#ownerDashboard .dash-greeting {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 27px;
+  line-height: 1.12;
+  font-weight: 400;
+}
+
+#ownerDashboard .dash-greeting strong {
+  font-weight: 850;
+}
+
+#ownerDashboard .dash-wave {
+  font-size: .82em;
+}
+
+#ownerDashboard .dash-sub {
+  margin: 0;
+  color: rgba(255, 255, 255, .84);
+  font-size: 15px;
+}
+
+#ownerDashboard .dash-hero-scene {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: min(50%, 540px);
+  min-width: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+  pointer-events: none;
+  padding-right: 10px;
+}
+
+#ownerDashboard .dash-hero-img {
+  width: auto;
+  max-width: 100%;
+  height: 115%;
+  max-height: none;
+  object-fit: contain;
+  object-position: right center;
+  display: block;
+  opacity: 1;
+}
+
+#ownerDashboard .owner-dashboard-stats {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 18px;
+}
+
+#ownerDashboard .stat-card.kpi-fleet,
+#ownerDashboard .stat-card.kpi-active,
+#ownerDashboard .stat-card.kpi-drivers,
+#ownerDashboard .stat-card.kpi-revenue {
+  min-height: 132px;
+  padding: 18px 22px;
+  align-items: center;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid rgba(17, 24, 39, .04);
+  box-shadow: 0 10px 28px rgba(17, 24, 39, .08);
+}
+
+#ownerDashboard .kpi-icon-wrap {
+  width: 58px;
+  height: 58px;
+  border-radius: 20px;
+}
+
+#ownerDashboard .stat-card.kpi-fleet .kpi-icon-wrap {
+  background: #fce8ef;
+  color: var(--maroon);
+}
+
+#ownerDashboard .stat-card.kpi-active .kpi-icon-wrap {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+#ownerDashboard .stat-card.kpi-drivers .kpi-icon-wrap {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+#ownerDashboard .stat-card.kpi-revenue .kpi-icon-wrap {
+  background: #fef9e7;
+  color: #b45309;
+}
+
+#ownerDashboard .stat-card .stat-label {
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+#ownerDashboard .stat-card .stat-value {
+  margin-bottom: 6px;
+  color: #111827;
+  font-size: 30px;
+}
+
+#ownerDashboard .kpi-revenue-val {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  flex-wrap: wrap;
+  font-size: 28px !important;
+}
+
+#ownerDashboard .kpi-currency {
+  margin: 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+#ownerDashboard .kpi-bar-wrap {
+  height: 5px;
+  margin: 6px 0 8px;
+}
+
+#ownerDashboard .kpi-bar {
+  height: 5px;
+}
+
+#ownerDashboard .owner-dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(460px, 1.02fr) minmax(420px, .98fr);
+  gap: 24px;
+  align-items: start;
+}
+
+#ownerDashboard .owner-dashboard-left,
+#ownerDashboard .owner-dashboard-right {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+
+#ownerDashboard .owner-dashboard-card {
+  margin: 0;
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid rgba(17, 24, 39, .04);
+  box-shadow: 0 10px 28px rgba(17, 24, 39, .08);
+}
+
+#ownerDashboard .card-title {
+  margin: 0 0 14px;
+  color: var(--maroon);
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+#ownerDashboard .dash-live-count {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #f3f4f6;
+  color: #4b5563;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+#ownerDashboard .dash-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #16a34a;
+  box-shadow: 0 0 0 4px rgba(22, 163, 74, .12);
+}
+
+#ownerDashboard .dash-map {
+  width: 100%;
+  height: 228px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #dbeafe;
+  border: 0;
+}
+
+#ownerDashboard .dash-map-note {
+  margin: 10px 0 0;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+#ownerDashboard .dash-map-popup {
+  min-width: 160px;
+  display: grid;
+  gap: 4px;
+  font-family: ui-sans-serif, system-ui, Segoe UI, Roboto, Arial;
+}
+
+#ownerDashboard .dash-map-popup b {
+  color: #111827;
+  font-size: 14px;
+}
+
+#ownerDashboard .dash-map-popup small {
+  color: #6b7280;
+}
+
+#ownerDashboard .dash-map-popup a {
+  margin-top: 6px;
+  display: inline-flex;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 7px;
+  background: var(--maroon);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+#ownerDashboard .popup-speed {
+  width: fit-content;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+#ownerDashboard .popup-speed--high {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+#ownerDashboard .quick-actions-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+#ownerDashboard .quick-action-btn.qa-fleet,
+#ownerDashboard .quick-action-btn.qa-staff,
+#ownerDashboard .quick-action-btn.qa-attendance,
+#ownerDashboard .quick-action-btn.qa-earnings,
+#ownerDashboard .quick-action-btn.qa-perf,
+#ownerDashboard .quick-action-btn.qa-feedback {
+  min-height: 86px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  box-shadow: none;
+}
+
+#ownerDashboard .qa-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+#ownerDashboard .qa-label {
+  font-size: 13px;
+}
+
+#ownerDashboard .qa-desc {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+#ownerDashboard .alerts-list {
+  gap: 10px;
+  margin: 0;
+}
+
+#ownerDashboard .alert-item {
+  min-height: 62px;
+  padding: 13px 16px;
+  border-radius: 9px;
+  text-decoration: none;
+  box-shadow: none;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+#ownerDashboard .alert-item:hover {
+  transform: translateX(2px);
+  box-shadow: 0 8px 18px rgba(17, 24, 39, .08);
+}
+
+#ownerDashboard .alert-content,
+#ownerDashboard .alert-title,
+#ownerDashboard .alert-time {
+  display: block;
+}
+
+#ownerDashboard .alert-title {
+  margin-bottom: 3px;
+  font-weight: 800;
+}
+
+#ownerDashboard .alert-time {
+  color: inherit;
+  opacity: .75;
+}
+
+#ownerDashboard .alert-warning {
+  background: linear-gradient(90deg, #fef3c7, #fffbeb);
+  color: #92400e;
+}
+
+#ownerDashboard .alert-success {
+  background: linear-gradient(90deg, #bbf7d0, #ecfdf5);
+  color: #065f46;
+}
+
+#ownerDashboard .alert-info {
+  background: linear-gradient(90deg, #dbeafe, #eff6ff);
+  color: #1d4ed8;
+  border-left: 0;
+}
+
+#ownerDashboard .alert-neutral {
+  background: linear-gradient(90deg, #f3f4f6, #fafafa);
+  color: #4b5563;
+  border-left: 0;
+}
+
+#ownerDashboard .alert-arrow {
+  margin-left: auto;
+  color: currentColor;
+  font-size: 24px;
+  line-height: 1;
+}
+
+#ownerDashboard .dash-title-link {
+  margin-left: auto;
+  color: var(--maroon);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+#ownerDashboard .dash-title-link:hover {
+  text-decoration: underline;
+}
+
+#ownerDashboard .dash-recent-table th,
+#ownerDashboard .dash-recent-table td {
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+#ownerDashboard .dash-recent-table th {
+  border-bottom-color: rgba(243, 185, 68, .55);
+}
+
+#ownerDashboard .dash-recent-table td {
+  border-bottom-color: rgba(232, 211, 154, .65);
+}
+
+#ownerDashboard .dash-row-link {
+  width: 34px;
+  text-align: right;
+}
+
+#ownerDashboard .dash-row-link a {
+  color: #9a5a12;
+  font-size: 24px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+#ownerDashboard .dash-empty-row {
+  padding: 24px;
+}
+
+@media (max-width: 1320px) {
+  body.owner-dashboard-page .app-shell {
+    grid-template-columns: 256px minmax(0, 1fr);
+  }
+
+  body.owner-dashboard-page .sidebar {
+    padding: 24px 16px 22px;
+  }
+
+  body.owner-dashboard-page .sidebar-brand {
+    gap: 10px;
+    padding-bottom: 20px;
+  }
+
+  body.owner-dashboard-page .sidebar-brand .logo {
+    width: 46px;
+    height: 46px;
+    flex-basis: 46px;
+  }
+
+  body.owner-dashboard-page .sidebar-brand .logo img {
+    width: 39px;
+    height: 39px;
+  }
+
+  body.owner-dashboard-page .sidebar-brand .app {
+    font-size: 14px;
+  }
+
+  body.owner-dashboard-page .sidebar-brand .sub {
+    font-size: 11px;
+  }
+
+  body.owner-dashboard-page #content {
+    padding: 24px;
+  }
+
+  #ownerDashboard .dash-hero {
+    min-height: 150px;
+    padding: 18px 34px;
+  }
+
+  #ownerDashboard .dash-hero-left {
+    width: 64%;
+  }
+
+  #ownerDashboard .dash-greeting {
+    font-size: 26px;
+  }
+
+  #ownerDashboard .dash-hero-scene {
+    width: 40%;
+    min-width: 220px;
+  }
+
+  #ownerDashboard .dash-hero-img {
+    height: 110%;
+  }
+
+  #ownerDashboard .owner-dashboard-stats {
+    gap: 16px;
+  }
+
+  #ownerDashboard .stat-card.kpi-fleet,
+  #ownerDashboard .stat-card.kpi-active,
+  #ownerDashboard .stat-card.kpi-drivers,
+  #ownerDashboard .stat-card.kpi-revenue {
+    gap: 14px;
+    min-height: 136px;
+    padding: 18px 20px;
+  }
+
+  #ownerDashboard .kpi-icon-wrap {
+    width: 54px;
+    height: 54px;
+    border-radius: 18px;
+  }
+
+  #ownerDashboard .stat-card .stat-value {
+    font-size: 28px;
+  }
+
+  #ownerDashboard .kpi-revenue-val {
+    font-size: 23px !important;
+  }
+
+  #ownerDashboard .stat-card .stat-label {
+    font-size: 11px;
+  }
+
+  #ownerDashboard .quick-actions-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  #ownerDashboard .quick-action-btn.qa-fleet,
+  #ownerDashboard .quick-action-btn.qa-staff,
+  #ownerDashboard .quick-action-btn.qa-attendance,
+  #ownerDashboard .quick-action-btn.qa-earnings,
+  #ownerDashboard .quick-action-btn.qa-perf,
+  #ownerDashboard .quick-action-btn.qa-feedback {
+    min-height: 76px;
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  #ownerDashboard .qa-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  #ownerDashboard .qa-label {
+    font-size: 12px;
+  }
+
+  #ownerDashboard .qa-desc {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 1120px) {
+  #ownerDashboard .owner-dashboard-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #ownerDashboard .owner-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  body.owner-dashboard-page .app-shell {
+    position: static;
+    display: block;
+  }
+
+  body.owner-dashboard-page .sidebar {
+    min-height: auto;
+  }
+
+  body.owner-dashboard-page #content {
+    padding: 18px;
+  }
+
+  #ownerDashboard .owner-dashboard-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  #ownerDashboard .dash-hero {
+    padding: 22px;
+  }
+
+  #ownerDashboard .dash-hero-left {
+    min-width: 0;
+  }
+
+  #ownerDashboard .dash-hero-scene {
+    display: none;
+  }
+}
+
+@media (max-width: 620px) {
+  #ownerDashboard .owner-dashboard-stats,
+  #ownerDashboard .quick-actions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #ownerDashboard .dash-greeting {
+    font-size: 23px;
+  }
+
+  #ownerDashboard .dash-map {
+    height: 230px;
+  }
+}
