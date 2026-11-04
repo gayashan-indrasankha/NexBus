@@ -14,7 +14,7 @@
 ![Architecture](https://img.shields.io/badge/Architecture-Custom%20MVC-8B1E3F)
 ![Roles](https://img.shields.io/badge/User%20roles-7-F3B944)
 
-<img src="docs/screenshots/owner-dashboard.webp" alt="Bus Owner Dashboard" width="900" />
+<img src="docs/screenshots/hero-showcase.webp" alt="NexBus showcase: Bus Owner earnings dashboard and passenger live map on a map of Sri Lanka" width="900" />
 
 <sub><i>The Bus Owner Portal: the module I led, redesigned and built most of.</i></sub>
 
